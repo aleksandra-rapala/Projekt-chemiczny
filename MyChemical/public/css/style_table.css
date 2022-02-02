@@ -1,0 +1,128 @@
+
+.middle_container_out{
+    display: flex;
+    direct: column;
+}
+
+
+
+.middle_container_tab{
+
+    display: grid;
+      width: 65%;
+      margin-left: 1%;
+      margin-right: 1%;
+
+    /* tu tyle miejsca ile w bazie powinno byc */
+      grid-template-columns: repeat(20, 1fr);
+
+
+    border-right: 2px solid #305F8E;
+    border-left: 2px solid #305F8E;
+    border-radius: 25px;
+
+
+    overflow: auto;
+}
+
+
+
+
+.middle_container_tab > div > img {
+
+    width: 25vw;
+    height: 35vh;
+
+    margin-top: 6vh;
+    border-radius: 1em 1em 0 0;
+    /*
+    //height: 50%;
+    //width: 100%;
+    //object-fit: cover;
+    border-radius: 1em 1em 0 0;*/
+}
+
+.middle_container_tab > div {
+
+    /*grid-column: 1/ span 1;*/
+    border-radius: 1em 1em 0 0;
+
+    margin-top: 10vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    margin-bottom: 10vh;
+    width:25vw;
+    height: 52vh;
+    background-color: #8fd6ee7a
+
+}
+
+
+
+
+
+.obraz3{
+    display: block;
+
+ margin-top:15%;
+
+    width:29%;
+    height: auto;
+
+    opacity: 0.71;
+}
+
+
+
+.dymek{
+    display: block;
+    position: absolute;
+    width:12%;
+
+    margin-top:20vh;
+    margin-left: 75vw;
+
+}
+
+
+
+.podpis_tabela, .podpis, .podpis_kalkulator{
+
+    margin-top: 0vh;
+    background: #197a9b 0% 0% no-repeat padding-box;
+    border-radius: 0px;
+    opacity: 1;
+    text-align: center;
+    font: normal normal bold 30px/56px Yu Gothic UI;
+    color: #FFFAFA;
+    border:0;
+
+    cursor: pointer;
+}
+
+
+.linia{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 10fr;
+    margin-top: 3vh;
+    background: #197a9b 0% 0% no-repeat padding-box;
+
+}
+
+#serce{
+    margin-top: 0vh;
+    background: #197a9b 0% 0% no-repeat padding-box;
+    border-radius: 0px;
+    border: 0;
+    opacity: 1;
+    text-align: center;
+    font: normal normal bold 30px/56px Yu Gothic UI;
+    color: #b80202;
+    width: 4vw;
+
+
+    cursor: pointer;
+}
+
+

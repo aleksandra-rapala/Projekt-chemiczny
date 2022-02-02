@@ -1,0 +1,117 @@
+
+
+
+.middle_container_out{
+    text-align: center;
+}
+
+
+
+
+.nazwa_kalkulatora{
+    background-color:  #8fd6ee81;
+}
+
+
+
+.container-wstep{
+    display: flex;
+
+    margin-left: 38%;
+    margin-top: 5vh;
+width: 62%;
+}
+
+
+
+.odnosniki{
+    border: 2px solid #0e4e67;
+    border-radius: 25px;
+    height: 5vh;
+    width: 20vw;
+    background-color: #8fd6ee81;
+    font: normal normal bold 18px/28px Sitka Display;
+}
+
+#kolba{
+    color: #0e4e67;
+}
+
+
+
+.tabela{
+
+    margin-top: 5vh;
+    width: 20%;
+
+    display: flex;
+    direct: column;
+
+    margin-left: 39vw;
+    margin-bottom: 5vh;
+}
+
+
+
+
+.columna1, .columna2{
+
+
+    border: solid #0e4e67 2px;
+    border-radius: 25px;
+    margin-right: 5%;
+
+    height: 40vh;
+
+}
+
+
+.dane{
+
+    margin-left: 4%;
+    margin-top: 8%;
+    font: normal normal bold 18px/28px Sitka Display;
+    border: #0e4e67 solid 1px;
+    border-radius: 10px;
+    height: 15%;
+    width: 90%;
+    text-align: center;
+
+}
+
+
+.przyciski{
+
+    margin-left: 15vw;
+    width: 10%;
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    top: 40vh;
+}
+.clear{
+
+}
+.oblicz{
+
+}
+
+
+.result{
+    position: absolute;
+    top: 40vh;
+    left: 70vw;
+    font: normal normal bold 48px/48px Sitka Display;
+}
+
+#svgContainer{
+
+    position: absolute;
+    top: 30vh;
+    left: 70vw;
+
+}
+
+
+

@@ -1,0 +1,126 @@
+
+
+.middle_container_tab{
+
+
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+
+    /* tu tyle miejsca ile w bazie powinno byc */
+    grid-template-columns: repeat(20, 1fr);
+
+
+    border-right: 2px solid #305F8E;
+    border-left: 2px solid #305F8E;
+    border-radius: 25px;
+
+
+    overflow: auto;
+}
+
+
+
+.middle_container_tab > div {
+
+    /*grid-column: 1/ span 1;*/
+    border-radius: 1em 1em 0 0;
+
+    margin-top: 5%;
+
+    margin-bottom: 5%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    width:50%;
+    height: auto;
+    background-color: #8fd6ee7a
+
+}
+
+
+
+.middle_container_tab > div > img {
+
+    margin-top: 5%;
+
+
+    width: 90%;
+
+
+
+    margin-left: 5%;
+    margin-right: 5%;
+
+
+
+
+
+    border-radius: 1em 1em 0 0;
+    /*
+    //height: 50%;
+    //width: 100%;
+    //object-fit: cover;
+    border-radius: 1em 1em 0 0;*/
+}
+
+
+
+
+
+
+
+.podpis_tabela, .podpis{
+
+    margin-top: 0vh;
+    background: #197a9b 0% 0% no-repeat padding-box;
+    border-radius: 0px;
+    opacity: 1;
+    text-align: center;
+    font: normal normal bold 30px/56px Yu Gothic UI;
+    color: #FFFAFA;
+    border:0;
+
+    cursor: pointer;
+}
+
+
+.linia{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 10fr;
+    margin-top: 3vh;
+    background: #197a9b 0% 0% no-repeat padding-box;
+
+}
+
+#serce{
+    margin-top: 0vh;
+    background: #197a9b 0% 0% no-repeat padding-box;
+    border-radius: 0px;
+    border: 0;
+    opacity: 1;
+    text-align: center;
+    font: normal normal bold 30px/56px Yu Gothic UI;
+    color: #b80202;
+    width: 4vw;
+
+
+    cursor: pointer;
+}
+
+
+.podpis_tabela{
+
+    margin-top: 0vh;
+    background: #197a9b 0% 0% no-repeat padding-box;
+    border-radius: 0px;
+    opacity: 1;
+    text-align: center;
+    font: normal normal bold 30px/56px Yu Gothic UI;
+    color: #FFFAFA;
+    border:0;
+
+    cursor: pointer;
+}

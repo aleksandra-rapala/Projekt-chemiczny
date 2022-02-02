@@ -1,0 +1,281 @@
+/* ogólne stylowanie aplikacji */
+
+
+body{
+    margin:0;
+}
+
+div {
+    width:100%;
+    margin:0;
+    padding: 0;
+}
+
+/* domyślne buttony */
+button{
+    background: #0F708F 0% 0% no-repeat padding-box;
+    border-radius: 20px;
+    text-align: center;
+    font: normal normal bold 40px/66px Yu Gothic UI;
+    color: #FFFAFA;
+}
+
+
+
+/*kontener górny*/
+.top_container{
+    background: url("../img/dna.jpg") ;
+    background-position: right bottom;
+    background-size: 100% auto;
+
+    border-bottom-right-radius: 50px ;
+    border-bottom-left-radius: 50px ;
+
+    border-bottom: #197a9b solid 2px;
+
+    height: 32vh;
+}
+
+
+
+
+
+/*pasek fixed menu*/
+.pasek_menu {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    height: 6vh;
+    background-color: #FFFFFF;
+    opacity: 0.9;
+}
+
+
+/*logo po lewej stronie*/
+.pasek_menu>img{
+    margin-left: 1vw;
+    width: 16vw;
+}
+
+/*menu po prawej stronie - pozycja*/
+.menu{
+    position: inherit;
+    top: inherit;
+    right: 0;
+    width: 25vw;
+    height: inherit;
+
+}
+
+/*ikony*/
+i{
+    opacity: 0.8;
+}
+
+
+
+
+
+
+/*menu po prawej stronie - styl*/
+ul{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    height: inherit;
+    margin:0;
+    text-align: center;
+}
+
+li a {
+    font: normal normal normal 30px/53px Sitka Heading;
+    color: #343461;
+    text-decoration: none;
+    text-align: inherit;
+}
+
+#active_one{
+    width: 100%;
+    height: 100%;
+    background-color:  #8fd6ee81;
+}
+
+
+li a:hover:not(#active_one){
+    text-decoration: underline;
+}
+
+
+
+
+
+
+/*kontener środkowy-główny*/
+.middle_container_out{
+    background: radial-gradient(closest-side, #8fd6ee7a, #fefffe, #fefffe);
+}
+
+
+
+
+
+/*kontener dolny*/
+.bottom_container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    background: url("../img/dna.jpg");
+    background-position: left top;
+    background-size: 100% auto;
+    opacity: 0.45;
+    height: 40vh;
+
+    border-top-right-radius: 50px ;
+    border-top-left-radius: 50px ;
+
+
+    border-top: #022d3b solid 2px;
+}
+
+
+#kontakt{
+    grid-column: 3/span 1;
+    margin-top: 12vh;
+    text-align: center;
+    font: normal normal normal 25px/45px Sitka Heading;
+    border-right: gray 1px solid;
+}
+
+
+#spolecznosc{
+    grid-column: 4/span 1;
+    margin-top: 12vh;
+    text-align: center;
+    font: normal normal normal 25px/45px Sitka Heading;
+}
+
+
+#ikony{
+    grid-column: 4/span 1;
+    grid-row: 2/span 1;
+    text-align: center;
+}
+
+
+
+
+
+
+
+@media only screen and (max-device-width: 420px) {
+
+    /*kontener górny*/
+    .top_container{
+        background: url("../img/dna.jpg") ;
+        background-position: right bottom;
+        height: 25vh;
+    }
+
+
+    /*pasek fixed menu*/
+    .pasek_menu {
+        position: fixed;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        z-index: 1;
+        height: 13vh;
+        background-color: #FFFFFF;
+        opacity: 1;
+    }
+
+
+    /*logo po lewej stronie*/
+    .pasek_menu>img{
+        display: block;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        width: 98vw;
+    }
+
+    /*menu po prawej stronie - pozycja*/
+    .menu{
+
+        border-top: solid 2px rgba(48, 95, 142, 0.34);
+        border-bottom: solid 2px rgba(48, 95, 142, 0.34);
+
+
+        position: inherit;
+
+        /* w sumie ma byc 15vh*/
+        margin-top: 9vh;
+        height:4vh ;
+        width: 100vw;
+
+        margin-right: 0;
+        margin-left: 0;
+
+
+    }
+
+    /*menu po prawej stronie - styl*/
+    ul{
+
+
+        padding-left: 0;
+
+        height: 4vh;
+        width: 100%;
+
+    }
+
+    li a {
+
+
+        font: normal normal normal 70px/73px Sitka Heading;
+
+    }
+
+
+    #active_one{
+        border-radius: 5px ;
+    }
+
+    /*kontener dolny*/
+    .bottom_container{
+
+
+        background-position: center top;
+        grid-template-columns: repeat(7, 1fr);
+        height: 24vh;
+
+
+
+    }
+
+
+    #kontakt{
+        grid-column: 4/span 1;
+        margin-top: 5vh;
+        text-align: center;
+        font: normal normal normal 25px/45px Sitka Heading;
+
+        padding-right: 2vw;
+        border-right: gray 1px solid;
+    }
+
+
+    #spolecznosc{
+        grid-column: 6/span 1;
+        margin-top: 7vh;
+        text-align: center;
+        font: normal normal normal 25px/45px Sitka Heading;
+    }
+
+
+    #ikony{
+        grid-column: 6/span 1;
+        grid-row: 2/span 1;
+        text-align: center;
+    }
+
+}

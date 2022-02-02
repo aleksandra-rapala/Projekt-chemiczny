@@ -1,0 +1,77 @@
+
+/*nadpisane zmiana top*/
+
+.top_container{
+    height: 12.1vh;
+}
+
+
+.pasek_menu{
+    opacity: 1;
+    
+}
+
+
+.top_container > .pasek_menu_two {
+ 
+   position: absolute;
+   top: 6vh;
+	height: 6vh;
+    width: 50vw;
+    right: 2vw;
+
+
+}
+
+
+
+/* zwykle menu logout, my account */
+
+.menu > ul{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: repeat(1, 1fr);
+    height: inherit;
+    margin:0;
+    text-align: center;
+  
+}
+
+
+/*nowe menu poniżej */
+
+.menu_main{
+    right: 0;
+}
+
+.menu_main > ul{
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+
+    height: inherit;
+    margin:0;
+    text-align: center;
+    opacity: 1;
+}
+
+
+#active_two{
+    
+	background-color: #FFFFFF;
+    opacity: 0.8;
+    height: 6vh;
+}
+
+li a:hover:not(#active_two){
+    text-decoration: underline; 
+}
+
+
+
+.top_container_text{
+   opacity: 1;
+    margin:0;
+    padding: 0;
+}
