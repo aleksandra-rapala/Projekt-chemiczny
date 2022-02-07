@@ -3,7 +3,7 @@
 require_once __DIR__.'/../../Database.php';
 
 //klasa podstawowa //tworzenie łączenia z bazą danych
-//moznaby się pokusić o wzorzec projektowy singleton, aby istaniała tylko jedna instancja
+//możnaby się pokusić o wzorzec projektowy singleton, aby istniała tylko jedna instancja
 
 class Repository {
     protected $database;

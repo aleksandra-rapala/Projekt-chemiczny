@@ -1,97 +1,88 @@
-//najpierw pobieramy wszystkie przyciski, które sa powiązane z serduszkami
-
-//ponieważ chcemy pobrac wszystkie przyciski z całej strony projektów to pobieramy je sobie za pomocą
-// querySelectorAll
 
 let like_buttons = [];
 let dislike_buttons = [];
-
 akcje();
 
 function akcje(){
 
-
     for(let i=0; i<like_buttons.length; i++) {
         like_buttons[i].outerHTML = like_buttons[i].outerHTML;
     }
-
-
     for(let i=0; i<dislike_buttons.length; i++) {
         dislike_buttons[i].outerHTML = dislike_buttons[i].outerHTML;
     }
 
-
     like_buttons = document.querySelectorAll(".serce_puste");
     dislike_buttons = document.querySelectorAll(".serce_zamalowane");
 
-
-    like_buttons.forEach(button => button.addEventListener("click", function(){giveLike(this);}));
-    dislike_buttons.forEach(button => button.addEventListener("click", function(){giveDislike(this);}));
-
+    like_buttons.forEach(button => button.addEventListener("click", function(){set_heart(this, "like");}));
+    dislike_buttons.forEach(button => button.addEventListener("click", function(){set_heart(this, "dislike");}));
 }
 
 
+//give like lub dislike w zależności od parametru method
+function set_heart(this_button, method){
 
-function giveLike(this_button) {
-
-    const likes = this_button;
-    const container = likes.parentElement.parentElement;
-    const brother_button = likes.nextSibling.nextSibling;
+    const container = this_button.parentElement.parentElement;
+    const brother_button = this_button.nextSibling.nextSibling;
     const id = container.getAttribute("id");
 
-    let tmp_string = "";
-
-    if(brother_button.className === "podpis_tabela") tmp_string = "/likeSelectTable";
-    else if(brother_button.className === "podpis_kalkulator") tmp_string = "/likeSelectCalculator";
-
-    fetch(tmp_string+`/${id}`) //wywołujemy endpoint, czyli akcję likeSelectCalculator i przekazujemy argument
+    fetch(makeUrlLine(brother_button, method)+`/${id}`) //wywołujemy endpoint, czyli akcję likeSelectCalculator i przekazujemy argument
         .then(function () {
-            likes.innerHTML = `<i class="fas fa-heart fa-lg"></i>`;
-
-            //likes.className="serce_zamalowane";
-            likes.setAttribute("class", "serce_zamalowane");
-
-            if(brother_button.className === "podpis_tabela") alert('Tablica została dodana do Twojego Board');
-            else if(brother_button.className === "podpis_kalkulator") alert('Kalkulator został dodany do Twojego Board');
-
-            this_button.outerHTML = this_button.outerHTML;
-
-         akcje();
-
-
+            aktualizuj_button(this_button, method);
+            makeAlert(brother_button, method);
         })
 }
 
 
-function giveDislike(this_button) {
-
-    const dislikes = this_button;
-    const container = dislikes.parentElement.parentElement;
-    const brother_button = dislikes.nextSibling.nextSibling;
-    const id = container.getAttribute("id");
 
 
+
+
+
+//pomocnicze
+
+function makeUrlLine(brother_button, method){
     let tmp_string = "";
-
-    if(brother_button.className === "podpis_tabela") tmp_string = "/dislikeSelectTable";
-    else if(brother_button.className === "podpis_kalkulator") tmp_string = "/dislikeSelectCalculator";
-
-
-
-    fetch(tmp_string+`/${id}`)
-        .then(function () {
-            dislikes.innerHTML = `<i class="far fa-heart fa-lg"></i>`;
-            dislikes.setAttribute("class", "serce_puste");
-
-
-
-            if(brother_button.className === "podpis_tabela") alert('Tablica została usunięta z Twojego Board');
-            else if(brother_button.className === "podpis_kalkulator") alert('Kalkulator został usunięty z Twojego Board');
-
-            this_button.outerHTML = this_button.outerHTML;
-            akcje();
-
-        })
+    if(brother_button.className === "podpis_tabela") tmp_string = "/"+method+"SelectTable";
+    else if(brother_button.className === "podpis_kalkulator") tmp_string = "/"+method+"SelectCalculator";
+    return tmp_string;
 }
 
 
+
+function makeAlert(brother_button, method){
+
+    let word ="";
+
+    if(brother_button.className === "podpis_tabela") {
+
+        if (method == "dislike") word = "usunięta";
+        else if (method == "like") word = "dodana";
+        alert('Tablica została ' + word + ' z Twojego Board');
+    }
+
+
+    else if(brother_button.className === "podpis_kalkulator") {
+        if (method == "dislike") word = "usunięty";
+        else if (method == "like") word = "dodany";
+        alert('Kalkulator został ' + word + ' z Twojego Board');
+    }
+
+}
+
+function aktualizuj_button(this_button, method){
+
+    if(method == "dislike"){
+        this_button.innerHTML = `<i class="far fa-heart fa-lg"></i>`;
+        this_button.setAttribute("class", "serce_puste");
+    }
+
+    else if(method == "like"){
+        this_button.innerHTML = `<i class="fas fa-heart fa-lg"></i>`;
+        this_button.setAttribute("class", "serce_zamalowane");
+    }
+
+    this_button.outerHTML = this_button.outerHTML;
+    akcje();
+}

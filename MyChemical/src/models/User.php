@@ -4,7 +4,6 @@ class User{
     private $id_user;
     private $email;
     private $password;
-    private $enabled;
     private $salt;
     private $id_account_type;
 

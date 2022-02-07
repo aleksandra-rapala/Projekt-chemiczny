@@ -1,7 +1,6 @@
 <?php
 /* klasa bazowa dla wszystkich innych kontrolerów */
 
-
 class AppController {
     private $request;
 

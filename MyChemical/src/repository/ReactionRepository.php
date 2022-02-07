@@ -1,13 +1,9 @@
 <?php
-
 require_once 'Repository.php';
-
 session_start();
 
 class ReactionRepository extends Repository
 {
-
-
     public function addReaction(Reaction $reaction)
     {
         $stmt = $this->database->connect()->prepare('
@@ -15,8 +11,6 @@ class ReactionRepository extends Repository
             VALUES (?, ?, ?, ?, ?)
         ');
 
-
-        //wykonanie zapytania //za pytajniki podstawiamy wartości konkretne
         $stmt->execute([
             $reaction->getNameReaction(),
             $reaction->getChemicalFormula(),
@@ -27,17 +21,13 @@ class ReactionRepository extends Repository
     }
 
 
-
-    public function deleteReaction(int $id_reaction){
-
+    public function deleteReaction(int $id_reaction)
+    {
         $stmt = $this->database->connect()->prepare('
             DELETE FROM "reaction" WHERE id_reaction=:id_reaction
         ');
 
-        //klucz pod który chcemy podstawić wartość
         $stmt->bindParam(':id_reaction', $id_reaction, PDO::PARAM_INT);
-
-        //wykonanie zapytania //za pytajniki podstawiamy wartości konkretne
         $stmt->execute();
     }
 
@@ -46,14 +36,10 @@ class ReactionRepository extends Repository
     public function getUserReaction(int $id_board): array
     {
         $result = [];
-
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM "reaction" WHERE "id_board" = :id_board
         ');
-
-
         $stmt->bindParam(':id_board', $id_board, PDO::PARAM_INT);
-
         $stmt->execute();
         $reactions = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -66,27 +52,19 @@ class ReactionRepository extends Repository
                 $reaction['img_reaction']
             );
         }
-
         return $result;
     }
 
 
-
-    public function getUserReactionsByTitle(string $searchString){
-
+    public function getUserReactionsByTitle(string $searchString)
+    {
         $searchString = '%' . strtolower($searchString) . '%';
-
         $stm = $this->database->connect()->prepare('
                 SELECT * FROM "reaction" WHERE id_board = :id_board and (LOWER(name_reaction) LIKE :search or LOWER(description) LIKE :search)
         ');
-
         $stm->bindParam(':search', $searchString, PDO::PARAM_STR);
         $stm->bindParam(':id_board', $_SESSION['id_board'], PDO::PARAM_INT);
         $stm->execute();
         return $stm->fetchAll(PDO::FETCH_ASSOC);
-
     }
-
-
-
 }

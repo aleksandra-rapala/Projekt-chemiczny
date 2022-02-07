@@ -15,7 +15,6 @@
     border-radius: 25px;
 
 
-
     height: 69vh;
 }
 
@@ -55,26 +54,18 @@ grid-template-rows: repeat(2, 1fr);
 }
 
 
-#jpudlo {
+#jpudlo, #dpudlo {
    
     display: flex;
     flex-direction: column;
- 
-     align-items:center; 
-    
+    align-items:center;
 }
 
-#dpudlo {
 
-    display: flex;
-    flex-direction: column;
-    align-items:center; 
-}
 
 #tpudlo {
   
     margin-top: 8vh;
-    
     display: flex;
     flex-direction: column;
 }
@@ -88,3 +79,22 @@ button{
     font: normal normal bold 20px/46px Yu Gothic UI;
 
 }
+
+
+
+@media only screen and (max-device-width: 420px) {
+
+    .bottom_container{
+        width: 142vw;
+    }
+
+    .middle_container_account{
+        margin-top: 10vh;
+        width: 139vw;
+    }
+
+    .middle_container_out{
+        height: 90vh;
+    }
+}
+

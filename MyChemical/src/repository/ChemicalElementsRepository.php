@@ -1,16 +1,13 @@
 <?php
-
 require_once 'Repository.php';
 require_once __DIR__ . '/../models/ChemicalElement.php';
 
 class ChemicalElementsRepository extends Repository
 {
 
-    //zwraca wszystkie obiekty kalkulatorów jako (nazwa kalkulatora + nazwa zdjęcia)
     public function getAllChemicalElements(): array
     {
         $result = [];
-
         $stmt = $this->database->connect()->prepare('
             SELECT * FROM "chemical_element";
         ');

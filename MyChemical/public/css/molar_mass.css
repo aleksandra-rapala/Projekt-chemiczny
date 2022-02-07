@@ -1,28 +1,18 @@
 
-
-
 .middle_container_out{
     text-align: center;
 }
-
-
-
 
 .nazwa_kalkulatora{
     background-color:  #8fd6ee81;
 }
 
-
-
 .container-wstep{
-    display: flex;
-
-    margin-left: 38%;
-    margin-top: 5vh;
+display: flex;
+margin-left: 38%;
+margin-top: 5vh;
 width: 62%;
 }
-
-
 
 .odnosniki{
     border: 2px solid #0e4e67;
@@ -37,37 +27,24 @@ width: 62%;
     color: #0e4e67;
 }
 
-
-
 .tabela{
-
     margin-top: 5vh;
     width: 20%;
-
     display: flex;
-    direct: column;
-
     margin-left: 39vw;
     margin-bottom: 5vh;
 }
 
 
-
-
 .columna1, .columna2{
-
-
     border: solid #0e4e67 2px;
     border-radius: 25px;
     margin-right: 5%;
-
     height: 40vh;
-
 }
 
 
 .dane{
-
     margin-left: 4%;
     margin-top: 8%;
     font: normal normal bold 18px/28px Sitka Display;
@@ -76,25 +53,16 @@ width: 62%;
     height: 15%;
     width: 90%;
     text-align: center;
-
 }
 
 
 .przyciski{
-
     margin-left: 15vw;
     width: 10%;
     display: flex;
     flex-direction: column;
-
     position: absolute;
     top: 40vh;
-}
-.clear{
-
-}
-.oblicz{
-
 }
 
 
@@ -103,15 +71,46 @@ width: 62%;
     top: 40vh;
     left: 70vw;
     font: normal normal bold 48px/48px Sitka Display;
+    margin: 0;
+    padding: 0;
 }
 
-#svgContainer{
 
+#svgContainer{
     position: absolute;
     top: 30vh;
     left: 70vw;
-
 }
 
 
+@media only screen and (max-device-width: 420px) {
 
+    .przyciski{
+        width: 25vw;
+    }
+
+    .middle_container_out{
+        width: 145vw;
+    }
+    .top_container{
+        width: 145vw;
+    }
+    .bottom_container{
+        width: 145vw;
+    }
+
+    .tabela{
+        margin-top: 20vh;
+        width: 80vw;
+    }
+
+    .result{
+        left: 45vw;
+        font: normal normal bold 68px/48px Sitka Display;
+    }
+
+    .odnosniki{
+        width: 80vw;
+        font: normal normal bold 50px/48px Sitka Display;
+    }
+}

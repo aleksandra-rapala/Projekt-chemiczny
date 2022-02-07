@@ -5,7 +5,6 @@ const passwordInput = form.querySelector('input[name="password"]');
 const confirmedPasswordInput = form.querySelector('input[name="confirm_password"]');
 
 
-
 //czy podany email jest poprawny
 function isEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
@@ -21,9 +20,7 @@ function arePasswordsSame(password, confirmedPassword) {
 
 function markValidation(element, condition) {
     !condition ? element.classList.add('no-valid') : element.classList.remove('no-valid');
-
 }
-
 
 
 

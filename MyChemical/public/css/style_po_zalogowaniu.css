@@ -2,25 +2,20 @@
 /*nadpisane zmiana top*/
 
 .top_container{
-    height: 12.1vh;
+    height: 12vh;
 }
-
 
 .pasek_menu{
     opacity: 1;
-    
 }
 
 
 .top_container > .pasek_menu_two {
- 
    position: absolute;
-   top: 6vh;
+    top: 6vh;
 	height: 6vh;
     width: 50vw;
     right: 2vw;
-
-
 }
 
 
@@ -35,7 +30,7 @@
     height: inherit;
     margin:0;
     text-align: center;
-  
+    cursor: pointer;
 }
 
 
@@ -54,11 +49,12 @@
     margin:0;
     text-align: center;
     opacity: 1;
+
+    cursor: pointer;
 }
 
 
 #active_two{
-    
 	background-color: #FFFFFF;
     opacity: 0.8;
     height: 6vh;
@@ -69,9 +65,48 @@ li a:hover:not(#active_two){
 }
 
 
-
 .top_container_text{
    opacity: 1;
     margin:0;
     padding: 0;
+}
+
+.middle_container_out{
+    height: 75vh;
+}
+
+
+
+@media only screen and (max-device-width: 420px) {
+
+    .top_container{
+        height: 22vh;
+        width: 142vw;
+    }
+
+    .middle_container_out{
+        height: 100vh;
+    }
+    .menu > ul{
+        border-left: solid #8fd6ee81 3px;
+        border-top: solid 1px #8fd6ee81;
+
+    }
+
+    .menu_main > ul{
+        margin-top:8vh;
+        grid-template-columns: repeat(4,1fr);
+    }
+
+
+    .top_container > .pasek_menu_two {
+        left: 10vw;
+        width: 120vw;
+    }
+
+    #active_two{
+        background-color: transparent;
+         opacity: 0.7;
+    }
+
 }

@@ -13,11 +13,12 @@ div {
 
 /* domyślne buttony */
 button{
-    background: #0F708F 0% 0% no-repeat padding-box;
+    background: #0F708F 0 0 no-repeat padding-box;
     border-radius: 20px;
     text-align: center;
     font: normal normal bold 40px/66px Yu Gothic UI;
     color: #FFFAFA;
+    cursor: pointer;
 }
 
 
@@ -30,13 +31,10 @@ button{
 
     border-bottom-right-radius: 50px ;
     border-bottom-left-radius: 50px ;
-
     border-bottom: #197a9b solid 2px;
 
     height: 32vh;
 }
-
-
 
 
 
@@ -113,6 +111,8 @@ li a:hover:not(#active_one){
 /*kontener środkowy-główny*/
 .middle_container_out{
     background: radial-gradient(closest-side, #8fd6ee7a, #fefffe, #fefffe);
+
+
 }
 
 
@@ -173,18 +173,15 @@ li a:hover:not(#active_one){
     .top_container{
         background: url("../img/dna.jpg") ;
         background-position: right bottom;
-        height: 25vh;
+        height: 35vh;
     }
 
 
     /*pasek fixed menu*/
     .pasek_menu {
-        position: fixed;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        z-index: 1;
         height: 13vh;
-        background-color: #FFFFFF;
         opacity: 1;
     }
 
@@ -192,19 +189,17 @@ li a:hover:not(#active_one){
     /*logo po lewej stronie*/
     .pasek_menu>img{
         display: block;
-        margin-left: 1vw;
         margin-right: 1vw;
         width: 98vw;
     }
+
+
 
     /*menu po prawej stronie - pozycja*/
     .menu{
 
         border-top: solid 2px rgba(48, 95, 142, 0.34);
         border-bottom: solid 2px rgba(48, 95, 142, 0.34);
-
-
-        position: inherit;
 
         /* w sumie ma byc 15vh*/
         margin-top: 9vh;
@@ -213,26 +208,20 @@ li a:hover:not(#active_one){
 
         margin-right: 0;
         margin-left: 0;
-
-
     }
+
+
 
     /*menu po prawej stronie - styl*/
     ul{
-
-
         padding-left: 0;
-
         height: 4vh;
         width: 100%;
-
     }
 
+
     li a {
-
-
         font: normal normal normal 70px/73px Sitka Heading;
-
     }
 
 
@@ -240,42 +229,33 @@ li a:hover:not(#active_one){
         border-radius: 5px ;
     }
 
+
+
     /*kontener dolny*/
     .bottom_container{
-
-
-        background-position: center top;
         grid-template-columns: repeat(7, 1fr);
-        height: 24vh;
-
-
-
+        height: 22vh;
     }
 
 
     #kontakt{
         grid-column: 4/span 1;
         margin-top: 5vh;
-        text-align: center;
-        font: normal normal normal 25px/45px Sitka Heading;
-
         padding-right: 2vw;
-        border-right: gray 1px solid;
     }
 
 
     #spolecznosc{
         grid-column: 6/span 1;
         margin-top: 7vh;
-        text-align: center;
-        font: normal normal normal 25px/45px Sitka Heading;
     }
 
 
     #ikony{
         grid-column: 6/span 1;
-        grid-row: 2/span 1;
-        text-align: center;
     }
 
 }
+
+
+
